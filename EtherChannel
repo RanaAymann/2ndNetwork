@@ -1,1 +1,31 @@
+! to provide additional BW
+! can be configured manually and dynamiclly
+ 
+! Manually
+! use the same channel group number for all the interfaces that should join the same port channel.
+! the number assgind to switch 1 does not have to match the number on switch 2
+
+#int <>
+! on each interface 
+#channel-group <number> mode on
+! on means Don't negotiate , just do PagP.
+! negotiation always carries the possibilty of failure.
+
+! Dynamically
+! PAgP , LACP
+
+! Negotiation Using PAgP
+! options: desirable , auto
+! desirable ; begins the negotiation
+! auto: waits for it.
+
+! Negotiation Using LACP
+! options: mode active , mode passive
+! active ; begins the negotiation
+! passive : will not.
+
+#show etherchannel
+#show etherchaneel summary
+#show etherchannel detail
+#show spanning-tree
 
