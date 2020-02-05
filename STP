@@ -7,6 +7,7 @@ Root bridge ( center of the network )
 ! 1- the oldest switch , 2- Bridge priority[ increment(x2) = 4096]  , 3- bridge MAC
 ! BRIDGE ID = Bridge priority + bridge MAC
 ! the lower bridge ID = ROOT bridge 
+! STP default priority =32768 or 0x8000
 
 ! 32768.MAC (the switch's MAC)
 ! 802.1d the common one. [ 30-50] outage.
@@ -19,6 +20,16 @@ Root bridge ( center of the network )
 
 ! Root port : lowest-COST path. (BW)
 ! blocked port : stops the loops
+
+! RSTP : to speed up convergence ( relies on timers )
+! portfast : edge ports non-STP-capable devices and non-trunking ports.
+switch(config-if)#spanning-tree portfast
+or 
+switch(config)#spanning-tree portfast default
+
+
+
+
 
 
 
