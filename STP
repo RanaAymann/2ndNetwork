@@ -4,7 +4,7 @@
 
 Root bridge ( center of the network )
 ! everything go through him
-! 1- the oldest switch , 2- Bridge priority[ increment(x2) = 4096]  , 3- bridge MAC
+! 1- the oldest switch , 2- Bridge priority[ 0 - 65535 ]  , 3- bridge MAC
 ! BRIDGE ID = Bridge priority + bridge MAC
 ! the lower bridge ID = ROOT bridge 
 ! STP default priority =32768 or 0x8000
@@ -26,6 +26,30 @@ Root bridge ( center of the network )
 switch(config-if)#spanning-tree portfast
 or 
 switch(config)#spanning-tree portfast default
+
+! PVST 
+! allows to make root switch different in each VLAN 
+#spanning-tree mode pvst
+#spanning-tree mode rapid-pvst
+
+#spanning-tree vlan <> priority <>
+! change the priority for each VLAN to change the root to each VLAN.
+! increment(x2) = 4096
+! The 12-bit VLAN-ID called : system ID extension
+
+#spanning-tree vlan 1 priority 4096
+#spanning-tree vlan 1 priority 8192
+ or 
+#spanning-tree vlan 1 root primary
+#spanning-tree vlan 1 root secondary
+
+#spanning-tree vlan 1 cost <>
+
+
+
+
+
+
 
 
 
