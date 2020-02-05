@@ -1,1 +1,31 @@
+! spanning-tree protocol
+! backup path to prevent broadcasts storms.
+! I need redundant or fault-tolerant network.
+
+Root bridge ( center of the network )
+! everything go through him
+! 1- the oldest switch , 2- Bridge priority[ increment(x2) = 4096]  , 3- bridge MAC
+! BRIDGE ID = Bridge priority + bridge MAC
+! the lower bridge ID = ROOT bridge 
+
+! 32768.MAC (the switch's MAC)
+! 802.1d the common one. [ 30-50] outage.
+
+! RSTP (802.1w) , also single common STP
+ 
+! MSTP(VLANS) 802.1s or MTP enables RSTP 
+! types : PVST+ [802.1D] this is a per-VLAN implementation of 802.1d 
+! also PVRST.
+
+! Root port : lowest-COST path. (BW)
+! blocked port : stops the loops
+
+
+
+
+
+
+
+
+
 
