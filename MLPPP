@@ -1,1 +1,18 @@
+! Redundancy + increase BW
 
+! logical int:
+
+#int multilink 1
+#ppp multilink group 1
+#ppp authentication pap
+#ip address ... .... 
+
+! physical int:
+
+#int ...
+#ppp encapsulation ppp
+#ppp multilink group1
+#no shut
+
+
+#show ppp all 
