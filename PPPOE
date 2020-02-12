@@ -1,1 +1,19 @@
+! PPP over Ethernet
 
+
+! the logical interface part:
+
+#int dialer 1
+#mtu 1492
+#encapsulation ppp
+#ppp authentication pap
+#ip address negociated (DHCP) 
+#dialer pool1
+! the brain of the physical int
+
+
+#int .....
+#ppp-client dial-pool-number 1
+#no shut
+
+#show int dialer 1
