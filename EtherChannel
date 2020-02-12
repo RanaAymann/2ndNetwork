@@ -1,3 +1,4 @@
+! use multiple physical interfaces to act as one logical interface
 ! to provide additional BW
 ! can be configured manually and dynamiclly
  
@@ -22,7 +23,21 @@
 ! Negotiation Using LACP
 ! options: mode active , mode passive
 ! active ; begins the negotiation
-! passive : will not.
+! passive : will not
+
+! all ports must have the same configuration: duplex ,speed,native,
+! allowed vlans,switchport mode.
+
+! Layer3 EtherChannel
+
+#ip routing
+#int range ....
+#no switchport
+#channel-group 1 mode on
+! static etherchannel 
+#int po1
+#ip address ..... .....
+
 
 #show etherchannel
 #show etherchaneel summary
