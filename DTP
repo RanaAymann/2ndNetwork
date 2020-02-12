@@ -1,0 +1,28 @@
+! decide the port trunking mode
+! should be dislabled by default for security reasons
+
+! Disable DTP
+#switchport mode access
+#switchport nonegoriate !(for security)
+
+! VTP : propagate VLAN configurations among switches
+! types: server( create and delete VLANs) , client ( sync VLAN configuration from the server) ,
+! transparent ( pass the information from the server).
+! VTP must have : Domain name , Version 2 , Password
+
+#switchport mode trunk
+#switchport nonegotiate
+#switchport trunk allowed vlan 1,2,3
+! repeat the command on all VTP switches types
+#show vtp status
+
+
+#show vlan brirf 
+! show the access port and their assigend vlans
+
+#show int trunk
+#show run
+
+
+
+
