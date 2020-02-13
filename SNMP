@@ -1,1 +1,13 @@
+! snmp v2
+! the community string isn't encrypted
+
+#snmp-server community RANA Ro (default read only)
+or  RW ( read and write)
+
+! snmp v3
+! view , group , user
+#snmp-server view VIEW1 iso included
+#snmp-server group GROUP1 v3 pri read VIEW1
+#snmp-server user RANA GROUP1 v3 auth sha 1234 priv des56 7891
+
 
