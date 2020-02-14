@@ -12,6 +12,27 @@ Root bridge ( center of the network )
 ! 32768.MAC (the switch's MAC)
 ! 802.1d the common one. [ 30-50] outage.
 
+#spanning-tree vlan 5
+! enables STP on vlan 5
+
+#spanning-tree vlan 5 root { primary | secondary }
+! depends on switch priority 
+
+#spanning-tree vlan 5 root primary diameter 7
+! diameter: maximum number of switches between any two end stations. (range 2-7 switches.)
+
+! STP timers
+
+#spanning-tree vlan 5 hello-time 4
+! default hello-interval 2 seconds. (1-10)
+
+#spannign-tree vlan 5 forward-time 20 
+!default 15 seconds (4-30)
+
+#spanning-tree vlan 5 max-age 25
+! default 20 seconds (6-40)
+ 
+
 ! RSTP (802.1w) , also single common STP
  
 ! MSTP(VLANS) 802.1s or MTP enables RSTP 
