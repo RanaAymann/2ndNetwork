@@ -1,1 +1,20 @@
+! First hop standby protocol
+! 3 types : HSRP (cisco) , VRRP (standard) , GLBP (cisco)
+! HSRP v1,v2
+! used to avoid points of faliure with fault tolerant default gateway.
+! assign third virtual interface to two router, so the host can't regonize 
+the failure router we it goes down and it will switch to the standby router.
+! assign the virtual gateway for the host.
 
+! configuration on both routers ( Active , Standby )
+
+#int <>
+or 
+#int vlan<> 
+! L3 switch 
+#standby 1 ip 10.0.0.1 
+#standby version 2
+#standby 1 priority 105
+! default priority 100
+
+#standby 1 preempt
